@@ -2,13 +2,17 @@
 // import React from 'react'
 // import '../App.css'
 import DeclarationForm from '../Pages/Contribution_Declaration/ContributionDeclaration';
-
+import Header_Section from '../Components/Invoice/Header_Section';
+import Invoice from '../Components/Invoice/Invoice';
 function App() {
   // const DeclarationForm = React.lazy(() => import('../Pages/DeclarationForm'));
 
   return (
     <>
-      <DeclarationForm />
+      {/* <DeclarationForm /> */}
+      {/* <Header_Section /> */}
+      <Invoice />
+    
     </>
   )
 }

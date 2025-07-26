@@ -1,0 +1,208 @@
+import {
+    Paper,
+    Title,
+    Text,
+    Stack,
+    Group,
+    Badge,
+    ScrollArea,
+    Divider,
+    Box,
+    Table,
+    NumberFormatter,
+    Flex,
+} from '../../../libs';
+import Header_Section  from './Header_Section';
+import TotalContributionCard from './TotalContributionCard';
+import SectionHeader from './SectionHeader';
+import EmployeeSection from './EmployeeSection';
+
+interface Employee {
+    fullName: string;
+    employeeType: 'PUBLIC' | 'PRIVATE' | 'MILITARY'|'POLICE';
+    grossSalary: number;
+    faydaId?: string;
+    tin?: string;
+    pensionPercent: number;
+    monthly_contribution: number;
+}
+
+const registeredEmployees : Employee[] = [
+  {
+    fullName: 'Carlos Antonio Diaz',
+    employeeType: 'MILITARY',
+    grossSalary: 82000,
+    tin: 'TIN456789123',
+    faydaId: 'FYD003',
+    pensionPercent: 40,
+    monthly_contribution: 32800,
+  },
+  {
+    fullName: 'Diana Rose Wilson',
+    employeeType: 'PUBLIC',
+    grossSalary: 78000,
+    tin: 'TIN321654987',
+    faydaId: 'FYD005',
+    pensionPercent: 18,
+    monthly_contribution: 14040,
+  },
+  {
+    fullName: 'Edward Thompson',
+    employeeType: 'POLICE',
+    grossSalary: 71000,
+    tin: 'TIN654987321',
+    faydaId: 'FYD006',
+    pensionPercent: 40,
+    monthly_contribution: 28400,
+  },
+  {
+    fullName: 'Fatima Al Hassan',
+    employeeType: 'MILITARY',
+    grossSalary: 85000,
+    tin: 'TIN147258369',
+    faydaId: 'FYD007',
+    pensionPercent: 40,
+    monthly_contribution: 34000,
+  },
+  {
+    fullName: 'George Martinez',
+    employeeType: 'PRIVATE',
+    grossSalary: 92000,
+    tin: 'TIN369258147',
+    faydaId: 'FYD008',
+    pensionPercent: 18,
+    monthly_contribution: 16560,
+  },
+  {
+    fullName: 'Hannah Grace Lee',
+    employeeType: 'PUBLIC',
+    grossSalary: 67000,
+    tin: 'TIN258147369',
+    faydaId: 'FYD009',
+    pensionPercent: 18,
+    monthly_contribution: 12060,
+  },
+  {
+    fullName: 'Ibrahim Ahmed',
+    employeeType: 'POLICE',
+    grossSalary: 73000,
+    tin: 'TIN741852963',
+    faydaId: 'FYD010',
+    pensionPercent: 40,
+    monthly_contribution: 29200,
+  },
+  {
+    fullName: 'Julia Ann Roberts',
+    employeeType: 'PRIVATE',
+    grossSalary: 89000,
+    tin: 'TIN963852741',
+    faydaId: 'FYD011',
+    pensionPercent: 18,
+    monthly_contribution: 16020,
+  },
+];
+const registeredTotal = registeredEmployees.reduce(
+  (sum, emp) => sum + emp.monthly_contribution,
+  0
+);
+
+const unregisteredEmployees : Employee[] = [
+  {
+    fullName: 'Sarah Johnson',
+    employeeType: 'PRIVATE',
+    grossSalary: 68000,
+    faydaId: 'FYD004',
+    pensionPercent: 18,
+    monthly_contribution: 12240,
+  },
+  {
+    fullName: 'Michael James Brown',
+    employeeType: 'PUBLIC',
+    grossSalary: 72000,
+    tin: 'TIN789123456',
+    pensionPercent: 18,
+    monthly_contribution: 12960,
+  },
+  {
+    fullName: 'Lisa Marie Davis',
+    employeeType: 'PRIVATE',
+    grossSalary: 65000,
+    faydaId: 'FYD012',
+    pensionPercent: 18,
+    monthly_contribution: 11700,
+  },
+  {
+    fullName: 'Robert Garcia',
+    employeeType: 'PUBLIC',
+    grossSalary: 70000,
+    tin: 'TIN456123789',
+    faydaId: 'FYD013',
+    pensionPercent: 18,
+    monthly_contribution: 12600,
+  },
+  {
+    fullName: 'Amanda Sue Miller',
+    employeeType: 'PRIVATE',
+    grossSalary: 74000,
+    pensionPercent: 18,
+    monthly_contribution: 13320,
+  },
+  {
+    fullName: 'David Rodriguez',
+    employeeType: 'PUBLIC',
+    grossSalary: 69000,
+    tin: 'TIN789456123',
+    faydaId: 'FYD014',
+    pensionPercent: 18,
+    monthly_contribution: 12420,
+  },
+  {
+    fullName: 'Jennifer Lynn Taylor',
+    employeeType: 'PRIVATE',
+    grossSalary: 76000,
+    faydaId: 'FYD015',
+    pensionPercent: 18,
+    monthly_contribution: 13680,
+  },
+];
+const unregisteredTotal = unregisteredEmployees.reduce(
+  (sum, emp) => sum + emp.monthly_contribution,
+  0
+);
+
+
+const Invoice = () => {
+    return (
+        <Paper >
+            <Stack>
+                <Header_Section
+                 title="December 2024 Declaration Contribution"
+                date="7/25/2025"
+                status="UNPAID"
+            />
+            <TotalContributionCard
+                totalAmount={382820}
+                totalEmployees={22}
+            />
+             <EmployeeSection
+                title="Registered Employees"
+                color="blue"
+                employees={registeredEmployees}
+                total={registeredTotal}
+            />
+
+            <EmployeeSection
+                title="UnRegistered Employees"
+                color="gray"
+                employees={unregisteredEmployees}
+                total={unregisteredTotal}
+            />
+            
+
+
+            </Stack>
+        </Paper>
+    );
+}
+
+export default Invoice

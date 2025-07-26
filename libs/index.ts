@@ -41,6 +41,7 @@ export {
     NavLink,
     Badge,
     Grid,
+    NumberFormatter,
     useMantineTheme,
     LoadingOverlay,
     List,
