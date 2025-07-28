@@ -13,8 +13,8 @@ const SectionTotalBar =({color='blue', total}: Props) => {
     return(
         <Box bg={background} px="md" py="sm" style={{ borderRadius: 8 }}>
             <Group justify='space-between' style={{backgroundcolor:background}} p="md">
-                <Text fw={500} c={color ==='gray' ? 'gray' : 'blue'}>{label}</Text>
-                <Text fw={600} c={color ==='gray' ? 'gray' : 'blue'}>{total.toLocaleString()}ETB</Text>
+                <Text fw={700} fz="md" c={color ==='gray' ? 'gray' : 'blue'}>{label}</Text>
+                <Text fz={20} fw={600} c={color ==='gray' ? 'gray' : 'blue'}>{total.toLocaleString()}ETB</Text>
             </Group>
         </Box>
         

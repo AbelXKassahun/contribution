@@ -15,7 +15,7 @@ const TotalContributionCard = ({totalAmount, totalEmployees}: TotalContributionC
                 </Stack> 
 
                 <Stack gap={0} align= "flex-end">
-                    <Title order={3} c="blue">{totalAmount.toLocaleString()} ETB</Title>
+                    <Title order={2} c="blue">{totalAmount.toLocaleString()} ETB</Title>
                     <Text size='sm' c="dimmed">{totalEmployees} employees total</Text>
 
                 </Stack> 

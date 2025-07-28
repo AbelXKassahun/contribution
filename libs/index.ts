@@ -36,6 +36,7 @@ export {
     Divider,
     Input,
     Stepper,
+    SegmentedControl,
     Anchor,
     Avatar,
     NavLink,
