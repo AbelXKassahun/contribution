@@ -1,6 +1,6 @@
-import {Container, Title, TextInput, Badge, Group, SimpleGrid} from '../../../libs';
+import { Container, Title, TextInput, Badge, Group, SimpleGrid } from '../../../libs';
 import OrganizationCard from './OrganizationCard';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // src/types/organization.ts
 
@@ -12,7 +12,7 @@ export interface Organization {
   status: 'active' | 'inactive';
 }
 
- const organizations: Organization[] = [
+const organizations: Organization[] = [
   {
     id: '1',
     name: 'Microsoft Corporation',
@@ -46,33 +46,33 @@ export interface Organization {
 const Organizations = () => {
   const [search, setSearch] = useState('');
   const filteredOrganizations = organizations.filter((org) => {
-  const q = search.toLowerCase();
-  return (
-    org.name.toLowerCase().includes(q) ||
-    org.tin.toLowerCase().includes(q) ||
-    org.email.toLowerCase().includes(q)
-  );
-});
-
+    const q = search.toLowerCase();
     return (
-        <Container size="lg" py="xl" >
-            <Group justify='space-between' mt="md" mb="md">
-                <Title order={1}>Organizations</Title>
-                <Badge color="blue" variant="filled" size="lg" radius={0} fw={700}>{organizations.length} ORGANIZATIONS</Badge>
-            </Group>
-            <TextInput  placeholder="Search organizations by name, TIN, or email..."  style={{flex: 1}}   value={search}
-              onChange={(e) => setSearch(e.currentTarget.value)}/>
-
-            <SimpleGrid
-            cols={{ base: 1, sm: 2, md: 3 }} // 1 col on mobile, 2 on small screens, 3 on md+
-            spacing="md">
-             {filteredOrganizations.map((org) => (
-            <OrganizationCard key={org.id} organization={org} />
-          ))}
-            </SimpleGrid>
-        </Container>
-
+      org.name.toLowerCase().includes(q) ||
+      org.tin.toLowerCase().includes(q) ||
+      org.email.toLowerCase().includes(q)
     );
+  });
+
+  return (
+    <Container size="lg" py="xl" >
+      <Group justify='space-between' mt="md" mb="md">
+        <Title order={1}>Organizations</Title>
+        <Badge color="blue" variant="filled" size="lg" radius={0} fw={700}>{organizations.length} ORGANIZATIONS</Badge>
+      </Group>
+      <TextInput placeholder="Search organizations by name, TIN, or email..." style={{ flex: 1 }} value={search}
+        onChange={(e) => setSearch(e.currentTarget.value)} />
+
+      <SimpleGrid
+        cols={{ base: 1, sm: 2, md: 3 }} // 1 col on mobile, 2 on small screens, 3 on md+
+        spacing="md">
+        {filteredOrganizations.map((org) => (
+          <OrganizationCard key={org.id} organization={org} />
+        ))}
+      </SimpleGrid>
+    </Container>
+
+  );
 }
 
 export default Organizations

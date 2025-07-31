@@ -7,9 +7,9 @@ import {
 from '../../../libs';
 
 interface Header_Section_Props{
-    title:string;
-    date: String;
-    status: 'PAID' | 'UNPAID'; 
+    title: string;
+    date: string;
+    status: 'PAID' | 'UNPAID';
 }
 
 const Header_Section = ({title,date,status}: Header_Section_Props) => {
