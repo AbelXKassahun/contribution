@@ -20,25 +20,45 @@ export const CustomTheme: MantineThemeOverride = {
                 p: "md",
                 mt: "xl",
             },
+        },
+        Tabs: {
+            defaultProps: {
+                height: "500"
+            },
+            styles: () => ({
+                tab: {
+                    height: 35
+                }
+            }),
+        },
+        Table: {
+            styles: () => ({
+                th: {
+                    fontSize: 12,
+                },
+                td: {
+                    fontSize: 12,
+                }
+            })
         }
-    //     Button: {
-    //         defaultProps: {
-    //             radius: 'xl',
-    //         },
-    //         styles: {
-    //             root: {
-    //                 fontWeight: 600,
-    //             },
-    //         },
-    //         vars: {
-    //             pill: (theme) => ({
-    //                 root: {
-    //                     borderRadius: 9999,
-    //                     backgroundColor: theme.colors.indigo[6],
-    //                     color: 'white',
-    //                 },
-    //             }),
-    //         },
-    //     },
+        //     Button: {
+        //         defaultProps: {
+        //             radius: 'xl',
+        //         },
+        //         styles: {
+        //             root: {
+        //                 fontWeight: 600,
+        //             },
+        //         },
+        //         vars: {
+        //             pill: (theme) => ({
+        //                 root: {
+        //                     borderRadius: 9999,
+        //                     backgroundColor: theme.colors.indigo[6],
+        //                     color: 'white',
+        //                 },
+        //             }),
+        //         },
+        //     },
     },
 };

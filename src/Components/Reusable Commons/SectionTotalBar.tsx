@@ -7,7 +7,7 @@ interface Props{
 }
 
 const SectionTotalBar =({color='blue', total}: Props) => {
-    const background =color === 'blue' ? '#e6f1ff' : '#f5f5f5';
+    const background = color === 'blue' ? '#e6f1ff' : '#f5f5f5';
     const label = color === 'blue' ? 'Registered Employees Total' : 'Unregistered Employees Total';
 
     return(
