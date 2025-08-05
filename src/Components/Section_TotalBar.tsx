@@ -1,4 +1,4 @@
-import {Group, Text, Box} from '../../../libs';
+import {Group, Text, Box} from '../../libs';
 
 
 interface Props{

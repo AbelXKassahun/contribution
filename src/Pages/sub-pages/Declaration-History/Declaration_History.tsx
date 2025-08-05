@@ -3,15 +3,15 @@ import {
   Paper,
   SimpleGrid,
   ScrollArea
-} from '../../../libs';
+} from '../../../../libs';
 
-import DeclarationFilter from '../Reusable Commons/DeclarationFilter';
-import Declaration_Cards, { type Declaration } from './Declaration_Cards';
+import DeclarationFilter from '../../../Components/Declaration_Filter';
+import Declaration_Cards, { type Declaration } from '../../../Components/Declaration-Card/Declaration_Card';
 
-import { mockDeclarations } from '../../../libs/MockData';
+import { mockDeclarations } from '../../../../libs/MockData';
 
 type DeclarationListProp = {
-  DeclarationListType: "complete"  | "incomplete" | "all" ;
+  DeclarationListType: "complete" | "incomplete" | "all";
   DeclarationsData?: Declaration[]
 }
 

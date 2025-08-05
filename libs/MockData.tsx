@@ -1,4 +1,4 @@
-import type { Declaration } from '../src/Components/Client_Side_Declaration_Management/Declaration_Cards';
+import type { Declaration } from '../src/Components/Declaration-Card/Declaration_Card';
 import type { Employee } from '../src/Components/Reusable Commons/EmployeeTable';
 
 export const registeredEmployees: Employee[] = [

@@ -4,12 +4,12 @@ import {
     Text,
     Badge,
 }
-from '../../../libs';
+from '../../libs';
 
 interface Header_Section_Props{
     title: string;
     date: string;
-    status: 'PAID' | 'UNPAID';
+    status: 'PAID' | 'UNPAID' | 'PENDING';
 }
 
 const Header_Section = ({title,date,status}: Header_Section_Props) => {
@@ -19,7 +19,7 @@ const Header_Section = ({title,date,status}: Header_Section_Props) => {
                 <Title order={2}>{title}</Title>
                 <Text size='sm' c="dimmed">Generated on {date}</Text>
             </div>
-            <Badge color= {status ==='PAID' ? 'blue' : 'red' } variant="filled" size='lg'>{status}</Badge>
+            <Badge color= {status ==='PAID' ? 'blue' : status ==='UNPAID' ? 'red' : 'yellow' } variant="filled" size='lg'>{status}</Badge>
         </Group>
     );
 };

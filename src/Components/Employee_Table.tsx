@@ -1,4 +1,4 @@
-import { Table, Badge, Text, ScrollArea } from '../../../libs';
+import { Table, Badge, Text, ScrollArea } from '../../libs';
 
 
 export type Employee = {

@@ -3,7 +3,7 @@ import {
     Title,
     Text,
     Paper,
-} from '../../../libs';
+} from '../../../../libs';
 
 const Description = () => {
     return (
@@ -11,7 +11,7 @@ const Description = () => {
             <Title order={2}>Welcome to Contribution Management Application</Title>
             <Text mb="lg">This application provides a way to manage contributions of your employees</Text>
             {/* Instructions */}
-            <Paper withBorder>
+            <Paper>
                 <Title order={4} >Purposes and Objectives</Title>
                 <List pl="20" >
                     <List.Item>View contributions of your employees</List.Item>

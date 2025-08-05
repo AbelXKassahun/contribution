@@ -4,7 +4,7 @@ import {
     Paper,
     SegmentedControl,
     Group
-} from '../../../libs';
+} from '../../libs';
 
 type DeclarationFilterProps = {
     month: string | null;

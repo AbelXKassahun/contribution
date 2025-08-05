@@ -1,4 +1,4 @@
-import { Paper, Stack, Text, Title, Group } from '../../../libs';
+import { Paper, Stack, Text, Title, Group } from '../../libs';
 
 interface TotalContributionCard_Props {
     totalAmount: number;
@@ -7,7 +7,7 @@ interface TotalContributionCard_Props {
 
 const TotalContributionCard = ({ totalAmount, totalEmployees }: TotalContributionCard_Props) => {
     return (
-        <Paper withBorder shadow="lg" radius="md" mt="0">
+        <Paper withBorder shadow="lg" radius="md" mt="0" p="0">
             <Group p="md" justify="space-between">
                 <Stack gap={0}>
                     <Text fw={550} fz={20} >Total Monthly Contribution</Text>
@@ -15,7 +15,7 @@ const TotalContributionCard = ({ totalAmount, totalEmployees }: TotalContributio
                 </Stack>
 
                 <Stack gap={0} align="flex-end">
-                    <Title order={2} c="blue">{totalAmount.toLocaleString()} ETB</Title>
+                    <Title order={3} c="blue">{totalAmount.toLocaleString()} ETB</Title>
                     <Text size='sm' c="dimmed">{totalEmployees} employees total</Text>
 
                 </Stack>
