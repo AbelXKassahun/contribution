@@ -3,38 +3,46 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 // import React from 'react'
 // import '../App.css'
 
-import ContributionPageClientSide from '../Pages/Contribution_Client_Side/ContributionDeclaration';
-import Description from "../Components/Description/Description";
-import DFUE from '../Components/DeclarationForUnregisteredEmployees/DFUE';
-import DFRE from '../Components/DeclarationForRegisteredEmployees/DFRE';
-import UnregisteredEmployeeForm from "../Components/DeclarationForUnregisteredEmployees/UnregisteredEmployeeForm";
-import UnregisteredEmployeeTable from "../Components/DeclarationForUnregisteredEmployees/UnregisteredEmployeeTable"
-import Declaration_History from '../Components/Client_Side_Declaration_Management/Declaration_History';
-import DeclarationDetails from '../Components/Declaration_Details/Details';
+import ContributionPage from '../Pages/Contribution-Declaration/Contribution_Declaration';
+import Description from "../Pages/sub-pages/Description/Description";
+import DFUE from '../Pages/sub-pages/Declaration-For-Unregistered-Employees/DFUE';
+import DFRE from '../Pages/sub-pages/Declaration-For-Registered-Employees/DFRE';
+import Declaration_History from '../Pages/sub-pages/Declaration-History/Declaration_History';
+import DeclarationDetails from '../Pages/sub-pages/Declaration-Details/Details';
+import Confirm_Declaration from '../Pages/sub-pages/Confirm-Declaration/Confirm_Declaration';
 function App() {
   // const DeclarationForm = React.lazy(() => import('../Pages/DeclarationForm'));
-  const detailsPaths = ["/contribution/unpaid_declarations/declaration_details", "contribution/declarations_history/declaration_details"]
+  const detailsPaths = ["/contribution/unpaid_declarations/declaration_details", "/contribution/declarations_history/declaration_details"]
+  // const detailsPaths = ["/contribution/unpaid_declarations/:id/declaration_details", "contribution/declarations_history/:id/declaration_details"]
+  const DFUE_paths = ["/contribution/DFUE/table", "/contribution/DFUE/form"]
+
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/contribution/description" />} />
-      <Route path="/contribution" element={<ContributionPageClientSide />}>
+      <Route path="/contribution" element={<ContributionPage />}>
         <Route index element={<Navigate to="description" />} />
-        <Route path="description" element={<Description />} />
-        <Route path="DFRE" element={<DFRE />} /> {/* Declaration For Registered Employees*/}
 
-        <Route path="DFUE" element={<DFUE />} > {/* Declaration For Unregistered Employees*/}
-          <Route index element={<Navigate to="table" />} />
-          <Route path="table" element={<UnregisteredEmployeeTable />} />
-          <Route path="form" element={<UnregisteredEmployeeForm />} />
-        </Route>
-        {/* below, there will be routes for declarations and paid history */}
-        <Route path="unpaid_declarations" element={<Declaration_History DeclarationListType="incomplete" />} /> {/* */}
-        <Route path="declarations_history" element={<Declaration_History DeclarationListType="complete" />} /> {/* */}
+        <Route path="description" element={<Description />} />
+
+        {/* Declaration For Registered Employees*/}
+        <Route path="DFRE" element={<DFRE />} />
+
+        {/* Declaration For Unregistered Employees*/}
+        {DFUE_paths.map((p) => (
+          <Route key={p} path={p} element={<DFUE />} />
+        ))}
+
+        <Route path="confirm_declaration" element={<Confirm_Declaration />} />
+
+        <Route path="unpaid_declarations" element={<Declaration_History DeclarationListType="incomplete" />} />
+
+        <Route path="declarations_history" element={<Declaration_History DeclarationListType="complete" />} />
       </Route>
 
       {detailsPaths.map((p) => (
         <Route key={p} path={p} element={<DeclarationDetails />} />
       ))}
+
     </Routes>
   )
 }

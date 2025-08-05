@@ -73,6 +73,10 @@ export {
     rgba,
 } from '@mantine/core';
 
+export { 
+    IconChevronDown 
+} from '@tabler/icons-react'
+
 export { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 export type { FileWithPath } from '@mantine/dropzone';
 export { notifications } from '@mantine/notifications';

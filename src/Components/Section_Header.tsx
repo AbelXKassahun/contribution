@@ -1,4 +1,4 @@
-import {Group, Text, Badge} from '../../../libs'
+import {Group, Text, Badge} from '../../libs'
 
 interface SectionHeaderProps {
     title: string;
@@ -11,7 +11,7 @@ const SectionHeader = ({title, count, color}: SectionHeaderProps) => {
     const badgecolor = color === 'gray' ? 'gray' : 'blue';
     const textcolor = color === 'gray' ? 'dimmed' : 'blue';
     return (
-        <Group justify="space-between">
+        <Group justify="space-between" ml={10} w={'100%'}>
             <Text size='lg' fw={700} c={textcolor}>{title}</Text>
             <Badge color={badgecolor} variant="filled" size='lg'>{badgeLabel}</Badge>
         </Group>

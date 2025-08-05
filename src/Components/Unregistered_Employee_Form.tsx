@@ -8,7 +8,7 @@ import {
     Title,
     Text,
     Paper,
-} from '../../../libs';
+} from '../../libs';
 
 import { useForm } from '@mantine/form';
 import { useState } from 'react';
