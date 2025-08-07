@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 // import '../App.css'
 
 import ContributionPage from '../Pages/Contribution-Declaration/Contribution_Declaration';
-import Description from "../Pages/sub-pages/Description/Description";
+// import Description from "../Pages/sub-pages/Description/Description";
 import DFUE from '../Pages/sub-pages/Declaration-For-Unregistered-Employees/DFUE';
 import DFRE from '../Pages/sub-pages/Declaration-For-Registered-Employees/DFRE';
 import Declaration_History from '../Pages/sub-pages/Declaration-History/Declaration_History';
@@ -18,11 +18,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/contribution/description" />} />
+      <Route path="/" element={<Navigate to="/contribution/DFRE" />} />
       <Route path="/contribution" element={<ContributionPage />}>
-        <Route index element={<Navigate to="description" />} />
+        <Route index element={<Navigate to="DFRE" />} />
 
-        <Route path="description" element={<Description />} />
+        {/* <Route path="description" element={<Description />} /> */}
 
         {/* Declaration For Registered Employees*/}
         <Route path="DFRE" element={<DFRE />} />

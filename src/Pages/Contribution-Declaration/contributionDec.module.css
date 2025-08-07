@@ -1,12 +1,15 @@
 .tab {
     position: relative;
-    border: 1px solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-0));
-    border-radius: 4px;
-    background-color: var(--mantine-color-white);
+    /* border: 1px solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-0));
+    border-radius: 4px; */
+    /* background-color: var(--mantine-color-white); */
+    border-radius: 0.5rem;
+    border: none;
+    color: #4a5568;
     transition: transform 0.2s ease;
-    :hover{
+    /* :hover{
         transform: scale(0.97);
-    }
+    } */
     
     &[data-active] {
         z-index: 1;
@@ -19,6 +22,24 @@
         }
     }
 }
+.tab:hover:not([data-active="true"]) {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+    color: #2d3748;
+}
+
+.tab[data-active="true"] {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+}
+/* .tabList{
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+} */
 
 .container {
     min-height: 80vh;

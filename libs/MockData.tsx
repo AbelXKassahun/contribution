@@ -1,5 +1,5 @@
 import type { Declaration } from '../src/Components/Declaration-Card/Declaration_Card';
-import type { Employee } from '../src/Components/Reusable Commons/EmployeeTable';
+import type { Employee } from '../src/Components/Employee_Table';
 
 export const registeredEmployees: Employee[] = [
     {
