@@ -1,4 +1,4 @@
-import type { MantineThemeOverride } from '@mantine/core';
+import { type MantineThemeOverride } from '@mantine/core';
 
 export const CustomTheme: MantineThemeOverride = {
     fontFamily: 'Open Sans, sans-serif',
@@ -7,7 +7,13 @@ export const CustomTheme: MantineThemeOverride = {
         Text: {
             defaultProps: {
                 size: 'sm',
+                color: "#2d3748;"
             },
+        },
+        Button: {
+            defaultProps: {
+                color: "#2d3748"
+            }
         },
         Container: {
             defaultProps: {

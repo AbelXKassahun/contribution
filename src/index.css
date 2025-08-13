@@ -38,6 +38,10 @@ body {
   min-width: 320px;
 }
 
+[data-orientation="horizontal"].mantine-ScrollArea-scrollbar {
+  display: none;
+}
+
 /* 
 h1 {
   font-size: 3.2em;

@@ -1,0 +1,14 @@
+.button {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+    color: #2d3748;
+}
+
+.button:hover {
+    /* background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); */
+    background-color: #2d3748;
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+}
