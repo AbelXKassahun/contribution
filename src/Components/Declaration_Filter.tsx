@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import {
-    Select,
+    // Select,
     Grid,
     Paper,
     SegmentedControl,
-    Group
+    Group,
 } from '../../libs';
 
+import { EthiopianPeriodPicker } from './EthiopianPeriodPicker/Ethiopian_Period_Picker'
+
+import EthiopianDatePicker from './Ethiopian-Date-Picker/Ethiopian_Date_Picker';
 type DeclarationFilterProps = {
     month: string | null;
     setMonth: (month: string | null) => void;
@@ -16,46 +20,37 @@ type DeclarationFilterProps = {
 }
 
 const DeclarationFilter = (FilterProps: DeclarationFilterProps) => {
+    const [date, setDate] = useState<string | null>(null);
+    const [selectedPeriod, setSelectedPeriod] = useState<{
+        type: "monthly" | "yearly"
+        period: string
+        year: string
+        label: string
+        startDate: string
+        endDate: string
+    } | null>(null)
+
+    console.log("Selected period:", selectedPeriod);
+
     return (
         <Paper radius="md" p="md" shadow="xs" bg="gray.0" mt="md" mb="xs" h="75px"
             style={{
                 display: 'flex',
                 alignItems: 'center',
-                width: '35%',
-                maxWidth: '50%',
+                // width: '35%',
+                maxWidth: '45%',
             }}
         >
             <Group>
                 <Grid align="flex-end">
-                    <Grid.Col span="auto">
-                        <Select placeholder='Select month'
-                            value={FilterProps.month}
-                            label="Month"
-                            clearable
-
-                            onChange={FilterProps.setMonth}
-                            data={[
-                                { value: 'January', label: 'January' },
-                                { value: 'February', label: 'February' },
-                                { value: 'March', label: 'March' },
-                                { value: 'April', label: 'April' },
-                                { value: 'May', label: 'May' },
-                                { value: 'June', label: 'June' },
-                                { value: 'July', label: 'July' },
-                                { value: 'August', label: 'August' },
-                                { value: 'September', label: 'September' },
-                                { value: 'October', label: 'October' },
-                                { value: 'November', label: 'November' },
-                                { value: 'December', label: 'December' },
-                            ]} />
-                    </Grid.Col>
-                    <Grid.Col span="auto">
-                        <Select placeholder='Select year'
-                            value={FilterProps.year}
-                            label="Year"
-                            clearable
-                            onChange={FilterProps.setYear}
-                            data={['2022', '2023', '2024', '2025'].map(year => ({ value: year, label: year }))} />
+                    <Grid.Col span="content" mr={"md"}>
+                        <EthiopianPeriodPicker
+                            onChange={(period) => {
+                                // console.log("Selected period:", period)
+                                setSelectedPeriod(period)
+                            }}
+                            placeholder="Choose a period..."
+                        />
                     </Grid.Col>
                     {FilterProps.status && (
                         <Grid.Col span="content">
@@ -71,6 +66,21 @@ const DeclarationFilter = (FilterProps: DeclarationFilterProps) => {
                                 fullWidth />
                         </Grid.Col>
                     )}
+                    <Grid.Col span="content">
+                        <EthiopianDatePicker
+                            value={date}
+                            onChange={(date) => {
+                                setDate(date);
+                                console.log("picked_date", date);
+                            }}
+                            label="Select Date"
+                            placeholder="Pick a date"
+                            size="xs"
+                            inputSize="sm"
+                            width="200px"
+                            allowFutureDates={false}
+                        />
+                    </Grid.Col>
                 </Grid>
             </Group>
         </Paper>

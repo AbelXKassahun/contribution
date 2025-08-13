@@ -82,7 +82,13 @@ export {
     IconShieldCheck, 
     IconCreditCardOff, 
     IconHistory,
-    IconExclamationCircleFilled
+    IconExclamationCircleFilled,
+    IconCalendarMonth,
+    IconChevronLeft,
+    IconChevronRight,
+    IconCheck,
+    IconTrash,
+    IconLanguage,
 } from '@tabler/icons-react'
 
 export { Dropzone, MIME_TYPES } from '@mantine/dropzone';

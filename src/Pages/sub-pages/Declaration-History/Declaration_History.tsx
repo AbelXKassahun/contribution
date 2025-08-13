@@ -32,8 +32,8 @@ const Declaration_History = ({ DeclarationListType }: DeclarationListProp) => {
   return (
     <Paper mt="0" p="0">
       {/*Filter section*/}
-      {/* <DeclarationFilter month={month} setMonth={setMonth} year={year} setYear={setYear} status={status} setStatus={setStatus} /> */}
-      <DeclarationFilter month={month} setMonth={setMonth} year={year} setYear={setYear} setStatus={setStatus} />
+      <DeclarationFilter month={month} setMonth={setMonth} year={year} setYear={setYear} status={status} setStatus={setStatus} />
+      {/* <DeclarationFilter month={month} setMonth={setMonth} year={year} setYear={setYear} setStatus={setStatus} /> */}
       {/*Filtered Declaration Cards */}
       <ScrollArea h={500} type="auto" pr="15px">
         <SimpleGrid
